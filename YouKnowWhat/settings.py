@@ -25,7 +25,7 @@ SECRET_KEY = '5zdssevsedx@9ko8j4cw@nso^hdjyez+%hb@a!&*8n%f*_f-so'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.jacksonyang.top']
 
 
 # Application definition

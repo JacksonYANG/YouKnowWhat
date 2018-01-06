@@ -2,6 +2,8 @@
 from django.shortcuts import render,render_to_response
 from django.http import HttpResponseRedirect,HttpResponse
 from zhihu.models import User
+from zhihu.models import Questions
+from zhihu.models import Answers
 from django import forms
 from django.template import RequestContext
 import pdb
@@ -36,7 +38,7 @@ def login(request):
                 HttpResponseRedirect('/zhihu/login/')
     else:
         userForm = UserForm()
-    return render_to_response('login.html', {'userForm',userForm}, context_instance = RequestContext(request))
+    return render_to_response('login.html', {'userForm': userForm}, context_instance = RequestContext(request))
 
 #注册
 def register(request):
@@ -52,7 +54,7 @@ def register(request):
             return HttpResponseRedirect(u'注册成功!')
     else:
         userForm = UserForm()
-    return render_to_response('register.html', {'userForm',userForm}, content_instance = RequestContext(request))
+    return render_to_response('register.html', {'userForm': userForm}, content_instance = RequestContext(request))
 
 #退出
 def logout(request):
@@ -65,5 +67,5 @@ def logout(request):
 #首页,待完善
 def index(request):
     username = request.COOKIES.get('username','')
-    return render_to_response('index.html', {'username',username})
+    return render_to_response('index.html', {'username': username})
 
